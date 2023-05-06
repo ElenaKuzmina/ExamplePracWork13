@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExamplePracWork13.Classes;
 
 namespace ExamplePracWork13
 {
@@ -23,6 +24,27 @@ namespace ExamplePracWork13
         public MainWindow()
         {
             InitializeComponent();
+
+            //список объектов класса ClassLibrary
+
+            List<ClassLibrary> libraries = new List<ClassLibrary>();
+
+            //один объект класса ClassLibrary
+            ClassLibrary library = new ClassLibrary()
+            {
+                NumberReaderBillet = "00000001",
+                FullName = "Кузьмина Елена Евгеньвна",
+                Adress = "Ликино-Дулево",
+                Phone = "+7(999)1112233",
+                TitleBook= "Самоучитель по C# для чайников",
+                DateIssue = DateTime.Now,
+                DateReturn= DateTime.Now.AddDays(10)
+
+            };
+            libraries.Add(library);
+
+            //источник данных таблицы - список объектов
+            DtgListBooks.ItemsSource = libraries;
         }
     }
 }
