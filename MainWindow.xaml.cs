@@ -27,7 +27,7 @@ namespace ExamplePracWork13
 
             //список объектов класса ClassLibrary
 
-            List<ClassLibrary> libraries = new List<ClassLibrary>();
+            //List<ClassLibrary> libraries = new List<ClassLibrary>();
 
             //один объект класса ClassLibrary
             ClassLibrary library = new ClassLibrary()
@@ -41,10 +41,16 @@ namespace ExamplePracWork13
                 DateReturn= DateTime.Now.AddDays(10)
 
             };
-            libraries.Add(library);
+            ClassHelp.libraries.Add(library);
 
             //источник данных таблицы - список объектов
-            DtgListBooks.ItemsSource = libraries;
+            DtgListBooks.ItemsSource = ClassHelp.libraries;
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {//переход на форму добавления
+            WindowAdd windowAdd = new WindowAdd();
+            windowAdd.ShowDialog();
         }
     }
 }
