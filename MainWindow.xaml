@@ -31,6 +31,21 @@
             <ComboBox Name="CmbFiltr"
                 
                       SelectionChanged="CmbFiltr_SelectionChanged"/>
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Height="130" Width="130"
+                        Margin="5">
+                <TextBlock Text="Сортировка по Читателю" Margin="5"
+                           Width="130"/>
+                <RadioButton Content="От А до Я"
+                             Margin="5"
+                             Name="RbUp"
+                             Checked="RbUp_Checked"/>
+                <RadioButton Content="От Я до А"
+                             Margin="5"
+                             Name="RbDown"
+                             Checked="RbDown_Checked"/>
+            </StackPanel>
         </StackPanel>
         <!--Центральная часть 
         Задание
