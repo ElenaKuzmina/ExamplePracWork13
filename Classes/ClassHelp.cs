@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ExamplePracWork13.Classes
 {
      class ClassHelp
-    {
+    {//глобальный список объектов класса ClassLibrary
        public static List<ClassLibrary> libraries = new List<ClassLibrary>();
     }
 }

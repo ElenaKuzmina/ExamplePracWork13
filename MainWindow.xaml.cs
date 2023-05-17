@@ -25,11 +25,7 @@ namespace ExamplePracWork13
         {
             InitializeComponent();
 
-            //список объектов класса ClassLibrary
-
-            //List<ClassLibrary> libraries = new List<ClassLibrary>();
-
-            //один объект класса ClassLibrary
+           //один объект класса ClassLibrary
             ClassLibrary library = new ClassLibrary()
             {
                 NumberReaderBillet = "00000001",
@@ -51,6 +47,11 @@ namespace ExamplePracWork13
         {//переход на форму добавления
             WindowAdd windowAdd = new WindowAdd();
             windowAdd.ShowDialog();
+        }
+
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {//поиск по ФИО
+            DtgListBooks.ItemsSource = ClassHelp.libraries.Where(x=>x.FullName.Contains(TxtSearch.Text)).ToList();
         }
     }
 }

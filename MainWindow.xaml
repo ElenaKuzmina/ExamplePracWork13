@@ -21,6 +21,11 @@
                     Width="100"
                     Height="30"
                     Click="BtnAdd_Click"/>
+            <TextBlock Width="100"
+                       Text="Поиск"/>
+            <TextBox Width="100"
+                     Name="TxtSearch"
+                     TextChanged="TxtSearch_TextChanged"/>
         </StackPanel>
         <!--Центральная часть 
         Задание
@@ -29,7 +34,7 @@
                     VerticalAlignment="Top"
                     Grid.Column="1">
             <Image Height="200" Source="Images\Tasks.bmp" 
-                   Margin="5" Stretch="Fill" IsEnabled="False"/>
+                   Margin="5" Stretch="Fill"/>
             <DataGrid Name="DtgListBooks"
                       IsReadOnly="True"
                       Margin="5"
