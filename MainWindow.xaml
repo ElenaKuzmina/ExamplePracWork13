@@ -26,6 +26,11 @@
             <TextBox Width="100"
                      Name="TxtSearch"
                      TextChanged="TxtSearch_TextChanged"/>
+            <TextBlock Width="120"
+                       Text="Фильтр по адресу"/>
+            <ComboBox Name="CmbFiltr"
+                
+                      SelectionChanged="CmbFiltr_SelectionChanged"/>
         </StackPanel>
         <!--Центральная часть 
         Задание

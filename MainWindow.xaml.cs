@@ -25,6 +25,8 @@ namespace ExamplePracWork13
         {
             InitializeComponent();
 
+            CmbFiltr.ItemsSource = ClassHelp.cities;
+
            //один объект класса ClassLibrary
             ClassLibrary library = new ClassLibrary()
             {
@@ -52,6 +54,17 @@ namespace ExamplePracWork13
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {//поиск по ФИО
             DtgListBooks.ItemsSource = ClassHelp.libraries.Where(x=>x.FullName.Contains(TxtSearch.Text)).ToList();
+        }
+
+        
+        private void CmbFiltr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //фильтр по городам
+            string city = ClassHelp.cities[CmbFiltr.SelectedIndex];
+            if (CmbFiltr.SelectedIndex != 0)
+                DtgListBooks.ItemsSource = ClassHelp.libraries.Where(x => x.Adress == city).ToList();
+            else
+                DtgListBooks.ItemsSource = ClassHelp.libraries;
         }
     }
 }
