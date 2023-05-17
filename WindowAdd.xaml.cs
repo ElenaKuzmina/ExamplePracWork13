@@ -25,6 +25,8 @@ namespace ExamplePracWork13
             InitializeComponent();
             TxbDateIssue.Text = DateTime.Now.ToString();
             TxbDateReturn.Text = DateTime.Now.AddDays(10).ToString();
+
+            CmbCities.ItemsSource = ClassHelp.cities;
         }
 
         private void BtnAddReader_Click(object sender, RoutedEventArgs e)
@@ -33,7 +35,7 @@ namespace ExamplePracWork13
             {
                 NumberReaderBillet = TxbBookReader.Text,
                 FullName = TxbFullName.Text,
-                Adress = TxbAdress.Text,
+                Adress = CmbCities.Text,
                 Phone = TxbPhone.Text,
                 TitleBook = TxbBookTitle.Text,
                 DateIssue = Convert.ToDateTime(TxbDateIssue.Text),

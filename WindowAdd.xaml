@@ -24,7 +24,8 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Адрес"/>
-                <TextBox Name="TxbAdress"/>
+                <!--<TextBox Name="TxbAdress"/>-->
+                <ComboBox Name="CmbCities"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
