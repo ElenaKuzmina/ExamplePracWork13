@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,34 @@ namespace ExamplePracWork13.Classes
      class ClassHelp
     {//глобальный список объектов класса ClassLibrary
        public static List<ClassLibrary> libraries = new List<ClassLibrary>();
-       //список городов
+       
+        
+//вспомогательные методы
+        //чтение данных их файла 
+        public static void ReadFromFile(string filePath)
+        {
+            StreamReader sr = new StreamReader(filePath);
+            while (!sr.EndOfStream) 
+            {
+                string line = sr.ReadLine();
+                string[] items = line.Split(';');
+                ClassLibrary library = new ClassLibrary()
+                {
+                    NumberReaderBillet = items[0],
+                    FullName = items[1],
+                    Adress = items[2],
+                    Phone = items[3],
+                    TitleBook = items[4],
+                    DateIssue = DateTime.Parse(items[5]),
+                    DateReturn = DateTime.Parse(items[6])
 
+                };
+                libraries.Add(library);
+            }
+        }
+        
+        
+        //список городов
         public static List<string> cities = new List<string>() 
         {"Все города",
                 "Абрамовка",

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExamplePracWork13.Classes;
+using Microsoft.Win32;
 
 namespace ExamplePracWork13
 {
@@ -69,13 +70,32 @@ namespace ExamplePracWork13
 
         private void RbUp_Checked(object sender, RoutedEventArgs e)
         {
+            //сортировка по возрастанию
             DtgListBooks.ItemsSource = ClassHelp.libraries.OrderBy(x => x.FullName).ToList();
         }
     
 
         private void RbDown_Checked(object sender, RoutedEventArgs e)
-        {
+        {//сортировка по убыванию
             DtgListBooks.ItemsSource = ClassHelp.libraries.OrderByDescending(x => x.FullName).ToList();
+        }
+
+        private void BtnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            //загрузка данных из файла
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if ((bool)openFileDialog.ShowDialog())
+            {
+                // получаем выбранный файл
+                string fileName = openFileDialog.FileName;
+               ClassHelp.ReadFromFile(fileName);
+                
+            }
+            else
+                return;
+
+
+            DtgListBooks.ItemsSource = ClassHelp.libraries.ToList();
         }
     }
 }

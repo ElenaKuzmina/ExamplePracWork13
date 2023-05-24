@@ -15,8 +15,11 @@
         <!--Левая часть 
         Кнопочное меню
         -->
+        
         <StackPanel Orientation="Vertical"
                     VerticalAlignment="Center">
+            <Button Name="BtnOpen" Content="Открыть файл"
+                    Click="BtnOpen_Click"/>
             <Button Name="BtnAdd" Content="Добавить"
                     Width="100"
                     Height="30"
